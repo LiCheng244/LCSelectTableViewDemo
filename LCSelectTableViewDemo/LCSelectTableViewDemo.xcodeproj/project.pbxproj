@@ -17,6 +17,8 @@
 		5AB651DC1E1602D700AC128C /* LCSelectTableViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB651DB1E1602D700AC128C /* LCSelectTableViewDemoUITests.m */; };
 		5AB651EB1E16038500AC128C /* RadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB651EA1E16038500AC128C /* RadioViewController.m */; };
 		5AB651EE1E16039700AC128C /* CheckBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB651ED1E16039700AC128C /* CheckBoxViewController.m */; };
+		5AB651F51E16469700AC128C /* RadioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB651F31E16469700AC128C /* RadioCell.m */; };
+		5AB651F61E16469700AC128C /* RadioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB651F41E16469700AC128C /* RadioCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,9 @@
 		5AB651EA1E16038500AC128C /* RadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioViewController.m; sourceTree = "<group>"; };
 		5AB651EC1E16039700AC128C /* CheckBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBoxViewController.h; sourceTree = "<group>"; };
 		5AB651ED1E16039700AC128C /* CheckBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckBoxViewController.m; sourceTree = "<group>"; };
+		5AB651F21E16469700AC128C /* RadioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioCell.h; sourceTree = "<group>"; };
+		5AB651F31E16469700AC128C /* RadioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioCell.m; sourceTree = "<group>"; };
+		5AB651F41E16469700AC128C /* RadioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +118,9 @@
 				5AB651BD1E1602D700AC128C /* ViewController.m */,
 				5AB651E91E16038500AC128C /* RadioViewController.h */,
 				5AB651EA1E16038500AC128C /* RadioViewController.m */,
+				5AB651F21E16469700AC128C /* RadioCell.h */,
+				5AB651F31E16469700AC128C /* RadioCell.m */,
+				5AB651F41E16469700AC128C /* RadioCell.xib */,
 				5AB651EC1E16039700AC128C /* CheckBoxViewController.h */,
 				5AB651ED1E16039700AC128C /* CheckBoxViewController.m */,
 				5AB651BF1E1602D700AC128C /* Main.storyboard */,
@@ -260,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AB651C61E1602D700AC128C /* LaunchScreen.storyboard in Resources */,
+				5AB651F61E16469700AC128C /* RadioCell.xib in Resources */,
 				5AB651C31E1602D700AC128C /* Assets.xcassets in Resources */,
 				5AB651C11E1602D700AC128C /* Main.storyboard in Resources */,
 			);
@@ -291,6 +300,7 @@
 				5AB651EE1E16039700AC128C /* CheckBoxViewController.m in Sources */,
 				5AB651EB1E16038500AC128C /* RadioViewController.m in Sources */,
 				5AB651B81E1602D700AC128C /* main.m in Sources */,
+				5AB651F51E16469700AC128C /* RadioCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

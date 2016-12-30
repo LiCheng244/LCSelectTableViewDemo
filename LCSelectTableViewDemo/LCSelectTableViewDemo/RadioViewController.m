@@ -7,6 +7,7 @@
 //
 
 #import "RadioViewController.h"
+#import "RadioCell.h"
 
 @interface RadioViewController ()
 
@@ -27,17 +28,19 @@
                                                                 target:self
                                                                 action:@selector(rightClick)];
     self.navigationItem.rightBarButtonItem = rightBtn;
+    self.tableView.rowHeight = 100;
 }
 
 /** 确定按钮 触发事件 */
 -(void)rightClick{
     
+    
     NSString *message = @"您还没有选择 cell";
     
     if (self.currentSelIndexPath) { // 有选择
         
-        UITableViewCell *selCell = [self.tableView cellForRowAtIndexPath:self.currentSelIndexPath];
-        message = selCell.textLabel.text;
+        RadioCell *selCell = [self.tableView cellForRowAtIndexPath:self.currentSelIndexPath];
+        message = selCell.titleLabel.text;
     }
     
     UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"选中的 cell"
@@ -60,19 +63,20 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+
+    RadioCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RadioCell"];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell"];
+        cell = [RadioCell loadCell];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"第%ld行", indexPath.row+1];
+    cell.titleLabel.text = [NSString stringWithFormat:@"第%ld行", indexPath.row];
     
     // 判断 当前cell 是否是 选中的cell
     if (self.currentSelIndexPath == indexPath) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        cell.checkImg.hidden = NO;
         
     }else{
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.checkImg.hidden = YES;
     }
     
     return cell;
@@ -83,13 +87,13 @@
     
     if (self.currentSelIndexPath) { // 有选中的cell, 修改上一个cell的样式
         // 上一次选中的 cell
-        UITableViewCell *lastSelCell = [tableView cellForRowAtIndexPath:self.currentSelIndexPath];
-        lastSelCell.accessoryType = UITableViewCellAccessoryNone;
+        RadioCell *lastSelCell = [tableView cellForRowAtIndexPath:self.currentSelIndexPath];
+        lastSelCell.checkImg.hidden = YES;
     }
     
     // 当前的 cell
-    UITableViewCell *currentSelCell = [tableView cellForRowAtIndexPath:indexPath];
-    currentSelCell.accessoryType = UITableViewCellAccessoryCheckmark;
+    RadioCell *currentSelCell = [tableView cellForRowAtIndexPath:indexPath];
+    currentSelCell.checkImg.hidden = NO;
     self.currentSelIndexPath = indexPath;
 }
 @end
